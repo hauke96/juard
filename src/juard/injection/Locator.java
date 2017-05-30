@@ -32,7 +32,7 @@ public class Locator
 		_serviceLocatorInitialized = true;
 	}
 	
-	private static <T> void register(Class<T> clazz, ServiceInstanceCreator<T> t)
+	public static <T> void register(Class<T> clazz, ServiceInstanceCreator<T> t)
 	{
 		Contract.Require(_serviceLocatorInitialized);
 		
