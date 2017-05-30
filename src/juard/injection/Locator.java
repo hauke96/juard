@@ -13,8 +13,19 @@ import juard.contract.Contract;
  */
 public class Locator
 {
-	private interface ServiceInstanceCreator<T>
+	/**
+	 * This interface is used to create instances of a specific type.
+	 * 
+	 * @author hauke
+	 *
+	 * @param <T>
+	 *            The type which instance should be created.
+	 */
+	public interface ServiceInstanceCreator<T>
 	{
+		/**
+		 * @return An instance of Type {@code T}.
+		 */
 		T resolve();
 	}
 	
