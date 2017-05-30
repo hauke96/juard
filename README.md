@@ -1,6 +1,15 @@
 # juard
-A mixture between "Java" and "guard". Juard.
+A tiny little framework as a guard to good code quality and annoying programming.
 # What is it?
-A veeeery simple framework for contracts in java. It actually just provides some if-clauses and some exceptions.
+A veeeery simple framework for contracts, events, dependency injection and logging in java.
 
 It was originally developed for the [METRO project](https://github.com/hauke96/METRO/), but I need this also in some other projects, so I made a library out of it.
+
+# Changelog
+## 0.0.1
+* Added contract classes
+
+## 0.0.2 
+* Added event class
+* Added logging class
+* Added dependency injection classes
