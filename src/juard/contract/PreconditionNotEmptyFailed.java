@@ -1,4 +1,4 @@
-package juard;
+package juard.contract;
 
 /**
  * @author hauke

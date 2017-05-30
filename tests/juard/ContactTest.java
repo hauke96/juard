@@ -2,6 +2,10 @@ package juard;
 
 import org.junit.Test;
 
+import juard.contract.Contract;
+import juard.contract.PreconditionNotEmptyFailed;
+import juard.contract.PreconditionNotNullFailed;
+
 public class ContactTest
 {
 	/**

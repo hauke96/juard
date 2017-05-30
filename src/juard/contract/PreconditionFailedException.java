@@ -1,4 +1,4 @@
-package juard;
+package juard.contract;
 
 /**
  * A general exception for a failed precondition.

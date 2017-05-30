@@ -1,4 +1,4 @@
-package juard;
+package juard.contract;
 
 /**
  * This class offers many contact methods to ensure pre- and postconditions.
