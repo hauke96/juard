@@ -85,7 +85,6 @@ public class Logger
 	 */
 	public static void __fatal(String errorMessage)
 	{
-		System.err.println("\nMETRO will be closed due to the following fatal error:\n");
 		__printOutput(errorMessage, FATAL, System.err, 3);
 		System.exit(1);
 	}
@@ -101,7 +100,6 @@ public class Logger
 	public static void __fatal(String errorMessage, Throwable throwable)
 	{
 		__printOutput(errorMessage, FATAL, System.err, 3);
-		System.err.println("\nMETRO will be closed due to the following exception:\n");
 		throwable.printStackTrace();
 		System.exit(1);
 	}
