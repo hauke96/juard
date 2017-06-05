@@ -6,12 +6,12 @@ package juard.contract;
  * @author hauke
  *
  */
-public class PostconditionFailedException extends RuntimeException
+public class ContractFailedException extends RuntimeException
 {
 	private static final long serialVersionUID = 1L;
 	
 	@SuppressWarnings ("javadoc")
-	public PostconditionFailedException(String message)
+	public ContractFailedException(String message)
 	{
 		super(message);
 	}
