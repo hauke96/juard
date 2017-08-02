@@ -53,4 +53,21 @@ public class Contract
 			throw new ContractFailedException("The given string is empty.");
 		}
 	}
+	
+	/**
+	 * Checks if the two objects are equal or not. This method uses the normal {@link #equals(Object)} method.
+	 * If the two objects are unequal, a ContractFailedException will be thrown.
+	 * 
+	 * @param obj1
+	 *            The first object to check.
+	 * @param obj2
+	 *            The second object to check.
+	 */
+	public static void AreEqual(Object obj1, Object obj2)
+	{
+		if (!obj1.equals(obj2))
+		{
+			throw new ContractFailedException("The given objects are not equal.");
+		}
+	}
 }
