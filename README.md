@@ -8,14 +8,15 @@ It was originally developed for the [METRO project](https://github.com/hauke96/M
 # Changelog
 ## 0.0.4
 * Events
- * Rename Event class `EventArgs` into `DataEvent`
- * Make `DataEvent` generic
+ * Renamed `EventArgs` into `DataEvent`
+ * Made `DataEvent` generic
  * Pass only one data object (now of the specified generic type), not an array
+ * Refactored code a lot
 * Contract
- * Remove old, deprecated contract methods
- * Add `AreEqual` method to contracts
+ * Removed old and deprecated methods
+ * Added `AreEqual` method
 * Logger
- * Rename all methods (just removed the two underscores. E.g. `__debug()` became `debug()`)
+ * Renamed all methods (just removed the two underscores. E.g. `__debug()` became `debug()`)
  * Added warning method and log-level (just call `warn()`)
  * Fixed comments
 
