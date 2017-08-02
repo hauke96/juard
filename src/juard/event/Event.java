@@ -3,6 +3,8 @@ package juard.event;
 import java.util.ArrayList;
 import java.util.List;
 
+import juard.contract.Contract;
+
 /**
  * Provides a general class for C#-like events.
  * 
@@ -36,7 +38,7 @@ public class Event
 	}
 	
 	/**
-	 * Registers the given event handler.
+	 * Registers the given event handler which must not be null.
 	 * 
 	 * Duplicates are allowed.
 	 * 
@@ -45,6 +47,8 @@ public class Event
 	 */
 	public void add(EventHandler eventHandler)
 	{
+		Contract.NotNull(eventHandler);
+		
 		_handlerList.add(eventHandler);
 	}
 	
