@@ -8,10 +8,10 @@ import java.util.List;
  * 
  * @author hauke
  * @param <T>
- *            The type of the argument beeing passed
+ *            The type of the argument being passed
  *
  */
-public class EventArgs<T>
+public class DataEvent<T>
 {
 	/**
 	 * Provides a method that will be fired a certain events this handler is registered to.
@@ -35,7 +35,7 @@ public class EventArgs<T>
 	/**
 	 * Creates a new Event.
 	 */
-	public EventArgs()
+	public DataEvent()
 	{
 		_handlerList = new ArrayList<>();
 	}
