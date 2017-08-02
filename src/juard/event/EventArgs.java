@@ -7,9 +7,11 @@ import java.util.List;
  * The EventArgs is a simple event but can handle arguments passed through to the handler.
  * 
  * @author hauke
+ * @param <T>
+ *            The type of the argument beeing passed
  *
  */
-public class EventArgs
+public class EventArgs<T>
 {
 	/**
 	 * Provides a method that will be fired a certain events this handler is registered to.
@@ -17,7 +19,7 @@ public class EventArgs
 	 * @author hauke
 	 *
 	 */
-	public interface EventArgsHandler
+	public interface EventArgsHandler<T>
 	{
 		/**
 		 * This method will be called when event is fired.
@@ -25,10 +27,10 @@ public class EventArgs
 		 * @param data
 		 *            Some data that should be send from sender to receiver.
 		 */
-		public void handleEvent(Object... data);
+		public void handleEvent(T... data);
 	}
 	
-	private List<EventArgsHandler> _handlerList;
+	private List<EventArgsHandler<T>> _handlerList;
 	
 	/**
 	 * Creates a new Event.
@@ -46,7 +48,7 @@ public class EventArgs
 	 * @param eventHandler
 	 *            The handler to register.
 	 */
-	public void add(EventArgsHandler eventHandler)
+	public void add(EventArgsHandler<T> eventHandler)
 	{
 		_handlerList.add(eventHandler);
 	}
@@ -57,9 +59,9 @@ public class EventArgs
 	 * @param data
 	 *            Some data that should be passed to the handler.
 	 */
-	public void fireEvent(Object... data)
+	public void fireEvent(T... data)
 	{
-		for (EventArgsHandler eventHandler : _handlerList)
+		for (EventArgsHandler<T> eventHandler : _handlerList)
 		{
 			eventHandler.handleEvent(data);
 		}
