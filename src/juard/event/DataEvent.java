@@ -19,7 +19,7 @@ public class DataEvent<T>
 	 * @author hauke
 	 *
 	 */
-	public interface EventArgsHandler<T>
+	public interface DataEventHandler<T>
 	{
 		/**
 		 * This method will be called when event is fired.
@@ -30,7 +30,7 @@ public class DataEvent<T>
 		public void handleEvent(T... data);
 	}
 	
-	private List<EventArgsHandler<T>> _handlerList;
+	private List<DataEventHandler<T>> _handlerList;
 	
 	/**
 	 * Creates a new Event.
@@ -48,7 +48,7 @@ public class DataEvent<T>
 	 * @param eventHandler
 	 *            The handler to register.
 	 */
-	public void add(EventArgsHandler<T> eventHandler)
+	public void add(DataEventHandler<T> eventHandler)
 	{
 		_handlerList.add(eventHandler);
 	}
@@ -61,7 +61,7 @@ public class DataEvent<T>
 	 */
 	public void fireEvent(T... data)
 	{
-		for (EventArgsHandler<T> eventHandler : _handlerList)
+		for (DataEventHandler<T> eventHandler : _handlerList)
 		{
 			eventHandler.handleEvent(data);
 		}
