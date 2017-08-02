@@ -1,57 +1,13 @@
 package juard.event;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import juard.contract.Contract;
-
 /**
  * Provides a general class for C#-like events.
  * 
  * @author hauke
  *
  */
-public class Event
+public class Event extends AbstractEvent<EventHandler>
 {
-	/**
-	 * Provides a method that will be fired a certain events this handler is registered to.
-	 * 
-	 * @author hauke
-	 *
-	 */
-	public interface EventHandler
-	{
-		/**
-		 * This method will be called when event is fired.
-		 */
-		public void handleEvent();
-	}
-	
-	private List<EventHandler> _handlerList;
-	
-	/**
-	 * Creates a new Event.
-	 */
-	public Event()
-	{
-		_handlerList = new ArrayList<>();
-	}
-	
-	/**
-	 * Registers the given event handler which must not be null.
-	 * 
-	 * Duplicates are allowed.
-	 * 
-	 * @param eventHandler
-	 *            The handler to register.
-	 */
-	public void add(EventHandler eventHandler)
-	{
-		Contract.NotNull(eventHandler);
-		
-		_handlerList.add(eventHandler);
-	}
-	
 	/**
 	 * Notified all registered event handler.
 	 */
@@ -61,21 +17,5 @@ public class Event
 		{
 			eventHandler.handleEvent();
 		}
-	}
-	
-	/**
-	 * Removes all registered listeners from this event.
-	 */
-	public void clean()
-	{
-		_handlerList.clear();
-	}
-	
-	/**
-	 * @return The amount of registered observers. Note that duplicates are allowed.
-	 */
-	public int countObservers()
-	{
-		return _handlerList.size();
 	}
 }
