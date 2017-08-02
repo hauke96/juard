@@ -43,9 +43,18 @@ public class Locator
 		_serviceLocatorInitialized = true;
 	}
 	
+	/**
+	 * Registers an instance creator for the given type.
+	 * Multiple registrations will replace the older one (there's only one at a time).
+	 * 
+	 * @param clazz
+	 *            The class type
+	 * @param t
+	 *            The instance creator
+	 */
 	public static <T> void register(Class<T> clazz, ServiceInstanceCreator<T> t)
 	{
-		Contract.Require(_serviceLocatorInitialized);
+		Contract.Satisfy(_serviceLocatorInitialized);
 		
 		_registeredServices.put(clazz, t);
 	}
@@ -59,8 +68,8 @@ public class Locator
 	 */
 	public static <T> T get(Class<T> clazz)
 	{
-		Contract.Require(_serviceLocatorInitialized);
-		Contract.Require(clazz != null);
+		Contract.Satisfy(_serviceLocatorInitialized);
+		Contract.NotNull(clazz);
 		
 		if (_initializedServices.containsKey(clazz))
 		{
