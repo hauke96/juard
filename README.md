@@ -6,7 +6,7 @@ A veeeery simple framework for contracts, events, dependency injection and loggi
 It was originally developed for the [METRO project](https://github.com/hauke96/METRO/), but I need this also in some other projects, so I made a library out of it.
 
 # Changelog
-## 0.0.4
+## 0.1.0
 * Events
  * Renamed `EventArgs` into `DataEvent`
  * Made `DataEvent` generic
