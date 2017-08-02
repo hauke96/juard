@@ -1,5 +1,7 @@
 package juard.contract;
 
+import java.text.MessageFormat;
+
 /**
  * This class offers many contact methods to ensure pre- and postconditions.
  * 
@@ -68,13 +70,13 @@ public class Contract
 		// Of one of them is null, they are unequal
 		if (obj1 == null && obj2 != null || obj2 == null && obj1 != null)
 		{
-			throw new ContractFailedException("The given objects are not equal.");
+			throw new ContractFailedException(MessageFormat.format("The given objects are not equal: {0} != {1}", obj1, obj2));
 		}
 		
 		// if they to not fulfill the equals-method, they are unequal
 		if (obj1 != null && !obj1.equals(obj2))
 		{
-			throw new ContractFailedException("The given objects are not equal.");
+			throw new ContractFailedException(MessageFormat.format("The given objects are not equal: {0} != {1}", obj1, obj2));
 		}
 	}
 }
