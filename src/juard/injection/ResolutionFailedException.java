@@ -1,5 +1,7 @@
 package juard.injection;
 
+import java.text.MessageFormat;
+
 /**
  * This exception will be fired if the Locator cannot resolve a type. This usually happens when this type hasn't been registered.
  * 
@@ -18,6 +20,6 @@ public class ResolutionFailedException extends RuntimeException
 	 */
 	public ResolutionFailedException(Class<?> clazz)
 	{
-		super("Failed to resolve class " + clazz.getSimpleName() + " (" + clazz.getName() + "). The type is not registered in the Locator.");
+		super(MessageFormat.format("Failed to resolve class {0} ({1}). The type may not be registered in the Locator.", clazz.getSimpleName(), clazz.getName()));
 	}
 }
