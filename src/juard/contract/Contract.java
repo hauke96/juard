@@ -9,68 +9,6 @@ package juard.contract;
 public class Contract
 {
 	/**
-	 * Checks if the given value is {@code true}. When it's not, it'll throw a {@link PreconditionFailedException}.
-	 * 
-	 * @param expression
-	 *            An expression to check.
-	 */
-	@Deprecated
-	public static void Require(boolean expression)
-	{
-		if (!expression)
-		{
-			throw new PreconditionFailedException();
-		}
-	}
-	
-	/**
-	 * Checks if the given variable is not null. If so, an exception will be thrown.
-	 *
-	 * @param variable
-	 *            The variable to check.
-	 */
-	@Deprecated
-	public static void RequireNotNull(Object variable)
-	{
-		if (variable == null)
-		{
-			throw new PreconditionNotNullFailed();
-		}
-	}
-	
-	/**
-	 * Checks if the given variable is not null and if it also is not an empty string.
-	 *
-	 * @param variable
-	 *            The variable to check.
-	 */
-	@Deprecated
-	public static void RequireNotNullOrEmpty(String variable)
-	{
-		Contract.RequireNotNull(variable);
-		if (variable.isEmpty())
-		{
-			throw new PreconditionNotEmptyFailed();
-		}
-	}
-	
-	/**
-	 * Checks if the result of a method is not null.
-	 * Place this method call just before the return statement in your method.
-	 * 
-	 * @param variable
-	 *            The variable to check.
-	 */
-	@Deprecated
-	public static void EnsureNotNull(Object variable)
-	{
-		if (variable == null)
-		{
-			throw new ContractFailedException("Variable is null.");
-		}
-	}
-	
-	/**
 	 * Checks if the given value is {@code true}. When it's not, it'll throw a {@link ContractFailedException}.
 	 * 
 	 * @param expression
