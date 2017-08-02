@@ -61,4 +61,62 @@ public class ContactTest
 		
 		Contract.NotNullOrEmpty(s);
 	}
+	
+	@Test (expected = ContractFailedException.class)
+	public void testContractSatisfyFail()
+	{
+		Contract.Satisfy(false);
+	}
+	
+	@Test
+	public void testContractSatisfyCorrect()
+	{
+		Contract.Satisfy(true);
+	}
+	
+	@Test (expected = ContractFailedException.class)
+	public void testContractAreEqualFail1()
+	{
+		Object a = new Object();
+		Object b = new Object();
+		
+		Contract.AreEqual(a, b);
+	}
+	
+	@Test (expected = ContractFailedException.class)
+	public void testContractAreEqualFail2()
+	{
+		Object a = new Object();
+		Object b = new Object();
+		
+		Contract.AreEqual(b, a);
+	}
+	
+	@Test (expected = ContractFailedException.class)
+	public void testContractAreEqualNullFail1()
+	{
+		Object a = new Object();
+		Object b = null;
+		
+		Contract.AreEqual(a, b);
+	}
+	
+	@Test (expected = ContractFailedException.class)
+	public void testContractAreEqualNullFail2()
+	{
+		Object a = new Object();
+		Object b = null;
+		
+		Contract.AreEqual(b, a);
+	}
+	
+	@Test
+	public void testContractAreEqualCorrect()
+	{
+		Object a = new Object();
+		Object b = a;
+		
+		Contract.AreEqual(a, b);
+		Contract.AreEqual(b, a);
+	}
 }

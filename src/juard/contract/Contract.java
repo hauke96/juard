@@ -65,7 +65,14 @@ public class Contract
 	 */
 	public static void AreEqual(Object obj1, Object obj2)
 	{
-		if (!obj1.equals(obj2))
+		// Of one of them is null, they are unequal
+		if (obj1 == null && obj2 != null || obj2 == null && obj1 != null)
+		{
+			throw new ContractFailedException("The given objects are not equal.");
+		}
+		
+		// if they to not fulfill the equals-method, they are unequal
+		if (obj1 != null && !obj1.equals(obj2))
 		{
 			throw new ContractFailedException("The given objects are not equal.");
 		}
