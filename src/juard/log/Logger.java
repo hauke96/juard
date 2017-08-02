@@ -16,7 +16,7 @@ public class Logger
 {
 	private static final String	DEBUG	= "[debug]";
 	private static final String	ERROR	= "[error]";
-	private static final String	INFO	= "[info]  ";
+	private static final String	INFO	= "[info] ";
 	private static final String	FATAL	= "[fatal]";
 	
 	/**
