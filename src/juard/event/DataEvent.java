@@ -17,6 +17,8 @@ public class DataEvent<T>
 	 * Provides a method that will be fired a certain events this handler is registered to.
 	 * 
 	 * @author hauke
+	 * @param <T>
+	 *            The type of the data object being passed
 	 *
 	 */
 	public interface DataEventHandler<T>
@@ -27,7 +29,7 @@ public class DataEvent<T>
 		 * @param data
 		 *            Some data that should be send from sender to receiver.
 		 */
-		public void handleEvent(T... data);
+		public void handleEvent(T data);
 	}
 	
 	private List<DataEventHandler<T>> _handlerList;
@@ -59,7 +61,7 @@ public class DataEvent<T>
 	 * @param data
 	 *            Some data that should be passed to the handler.
 	 */
-	public void fireEvent(T... data)
+	public void fireEvent(T data)
 	{
 		for (DataEventHandler<T> eventHandler : _handlerList)
 		{
